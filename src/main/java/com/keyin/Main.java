@@ -11,11 +11,6 @@ public class Main {
         User[] users = new User[MAX_USERS];
         int userCount = 0;
 
-        // SMOKE TEST
-        User u = new User("test");
-        u.addTask("first");
-        u.printTasks();
-
         boolean exit = false;
 
         while (!exit) {

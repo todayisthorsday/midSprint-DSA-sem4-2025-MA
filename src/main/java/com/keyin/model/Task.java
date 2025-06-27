@@ -1,7 +1,7 @@
 package com.keyin.model;
 
 public class Task {
-    private String description;
+    private final String description;
 
     private Boolean isCompleted;
 
@@ -24,6 +24,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return (isCompleted ? "[✓]" : "[ ]") + description;
+        return (isCompleted ? "[✓] " : "[ ] ") + description;
     }
 }
