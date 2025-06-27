@@ -5,7 +5,18 @@ public class TaskList {
     private Node head;
 
     public void printAll() {
+        Node curr = head;
+        int i = 0;
+        while (curr != null) {
+            System.out.println(i + ": " + curr.data);
+            curr = curr.next;
+            i++;
+        }
+        if (i == 0) {
+            System.out.println("  (no tasks yet)");
+        }
     }
+
 
     private static class Node {
         Task data;

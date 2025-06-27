@@ -3,8 +3,8 @@ package com.keyin.model;
 import com.keyin.datastructures.TaskList;
 
 public class User {
-    private final String name;         // mark as final since it’s only set in the ctor
-    private final TaskList taskList;   // ditto
+    private final String name;
+    private final TaskList taskList;
 
     public User(String name) {
         this.name = name;
