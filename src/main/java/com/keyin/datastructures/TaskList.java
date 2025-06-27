@@ -4,6 +4,9 @@ import com.keyin.model.Task;
 public class TaskList {
     private Node head;
 
+    public void printAll() {
+    }
+
     private static class Node {
         Task data;
         Node next;
@@ -32,30 +35,20 @@ public class TaskList {
     }
 
     public void markCompleted(int index) {
+        if (index < 0) {
+            System.out.println("Invalid index: " + index);
+            return;
+        }
         Node curr = head;
         int i = 0;
-        while(curr != null && i < index) {
+        while (curr != null && i < index) {
             curr = curr.next;
             i++;
         }
-        if(curr != null) {
-            System.out.println("No task at index" + index);
+        if (curr == null) {
+            System.out.println("No task at index " + index);
         } else {
             curr.data.markCompleted();
         }
-    }
-
-    public void printALL() {
-        Node curr = head;
-        int i = 0;
-        while(curr != null) {
-            System.out.println(i + ": " + curr.data);
-            curr = curr.next;
-            i++;
-        }
-        if (i == 0) {
-            System.out.println("  (no tasks yet)");
-        }
-
     }
 }
