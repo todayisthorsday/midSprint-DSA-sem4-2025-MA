@@ -4,6 +4,9 @@ import com.keyin.model.Task;
 public class TaskList {
     private Node head;
 
+    public void printAll() {
+    }
+
     private static class Node {
         Task data;
         Node next;

@@ -8,7 +8,6 @@ public class User {
     private String name;
     private TaskList taskList;
 
-    // 2. Constructor (how to build it)
     public User(String name) {
         this.name = name;
         this.taskList = new TaskList();
@@ -17,7 +16,6 @@ public class User {
     public String getName() {
         return name;
     }
-    // 3. Methods (behavior)
 
     public void setName(String name) {
         this.name = name;
@@ -30,5 +28,8 @@ public class User {
     public void printTasks() {
         System.out.println("Tasks for " + name + ":");
         taskList.printAll();
+    }
+    public void markTaskCompleted(int index) {
+        taskList.markCompleted(index);
     }
 }
