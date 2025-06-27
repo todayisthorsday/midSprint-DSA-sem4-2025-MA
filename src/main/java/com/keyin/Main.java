@@ -13,6 +13,10 @@ public class Main {
         boolean exit = false;
 
         while (!exit) {
+            String choice;
+            String name;
+            int idx;
+
             System.out.println("\n=== To-Do List Manager ===");
             System.out.println("1. Create user");
             System.out.println("2. Add task to user");
@@ -21,7 +25,7 @@ public class Main {
             System.out.println("5. Exit");
             System.out.print("Choose an option: ");
 
-            String choice = scanner.nextLine();
+            choice = scanner.nextLine();
             switch (choice) {
                 case "1":
                     if (userCount >= MAX_USERS) {
@@ -29,7 +33,7 @@ public class Main {
                         break;
                     }
                     System.out.print("Enter username: ");
-                    String name = scanner.nextLine();
+                    name = scanner.nextLine();
                     if (findUser(users, userCount, name) != -1) {
                         System.out.println("User already exists.");
                     } else {
@@ -41,7 +45,7 @@ public class Main {
                 case "2":
                     System.out.print("Enter username: ");
                     name = scanner.nextLine();
-                    int idx = findUser(users, userCount, name);
+                    idx = findUser(users, userCount, name);
                     if (idx == -1) {
                         System.out.println("No such user.");
                     } else {
