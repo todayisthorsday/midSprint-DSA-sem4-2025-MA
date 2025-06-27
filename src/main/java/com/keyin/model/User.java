@@ -1,12 +1,10 @@
 package com.keyin.model;
+
 import com.keyin.datastructures.TaskList;
-import com.keyin.model.Task;
-import java.util.ArrayList;
-import java.util.List;
 
 public class User {
-    private String name;
-    private TaskList taskList;
+    private final String name;         // mark as final since it’s only set in the ctor
+    private final TaskList taskList;   // ditto
 
     public User(String name) {
         this.name = name;
@@ -17,19 +15,16 @@ public class User {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void addTask(String description) {
         taskList.add(new Task(description));
+    }
+
+    public void markTaskCompleted(int index) {
+        taskList.markCompleted(index);
     }
 
     public void printTasks() {
         System.out.println("Tasks for " + name + ":");
         taskList.printAll();
-    }
-    public void markTaskCompleted(int index) {
-        taskList.markCompleted(index);
     }
 }
